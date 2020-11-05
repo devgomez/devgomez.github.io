@@ -1,9 +1,20 @@
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-main {
-  flex: 1 0 auto;
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.photo {
+  width: 15rem;
+  height: 18rem;
+  border-radius: 20;
 }
