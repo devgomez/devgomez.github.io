@@ -56,28 +56,31 @@
     <p id="info" class="text-white"></p>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
-        let buton=document.getElementById('button')
+$(document).ready(function() {
+  $('#button').click(function() {
+    var caja = $('#caja').val();
+    var img = $('#img');
+    var p = $('#info');
+    
+    $.ajax({
+      url: `https://pokeapi.co/api/v2/pokemon/${caja}`,
+      method: 'GET',
+      success: function(response) {
+        var datoPokemon = response;
+        console.log(datoPokemon);
+        img.attr('src', datoPokemon.sprites.front_default);
+        p.text(datoPokemon.name);
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+      }
+    });
+  });
+});
 
-        buton.addEventListener('click',()=>{
-            let caja=document.getElementById('caja').value
-            let img=document.getElementById('img')
-            let p=document.getElementById('info')
-            let xhttp=new XMLHttpRequest()
-            xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${caja}`)
-            xhttp.send()
-
-            xhttp.onreadystatechange=function () {
-                if(this.readyState==4 && this.status==200)
-                {
-                let datoPokemon=JSON.parse( this.responseText)
-                console.log(datoPokemon)
-                img.setAttribute("src",datoPokemon.sprites.front_default)
-                p.textContent=datoPokemon.name
-                }
-            }
-
-        })
     </script>
 
 </body>
