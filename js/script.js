@@ -1,13 +1,20 @@
 // Efecto de escritura en el título
 document.addEventListener('DOMContentLoaded', function () {
     const title = document.querySelector('.entrada-left h1');
-    const text = title.innerText;
-    title.innerText = '';
+    const text = title.textContent.trim();
+    title.innerHTML = '';
+    title.style.whiteSpace = 'normal';
+    title.style.wordWrap = 'break-word';
 
     let i = 0;
     function typeWriter() {
         if (i < text.length) {
-            title.innerText += text.charAt(i);
+            const char = text.charAt(i);
+            if (char === ' ') {
+                title.innerHTML += '&nbsp;';
+            } else {
+                title.innerHTML += char;
+            }
             i++;
             setTimeout(typeWriter, 100);
         }

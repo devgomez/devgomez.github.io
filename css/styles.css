@@ -266,13 +266,14 @@ body::before {
 }
 
 .entrada-left {
-    flex: 1;
+    flex: 0 0 70%;
     text-align: left;
     z-index: 2;
+    max-width:70%;
 }
 
 .entrada-left h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
     background: linear-gradient(45deg, #00ffff, #0096ff, #00aaff);
     background-size: 200% 200%;
@@ -282,8 +283,14 @@ body::before {
     animation: gradient 3s ease infinite;
     text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
+    line-height: 1.2;
+    word-wrap: break-word;
+    max-width: 100%;
+    word-spacing: 0.5em;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 @keyframes gradient {
@@ -293,18 +300,22 @@ body::before {
 }
 
 .entrada-left p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 30px;
     color: #cccccc;
     line-height: 1.6;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
 }
 
 .foto {
-    flex: 1;
+    flex: 0 0 35%;
     text-align: center;
     position: relative;
     z-index: 2;
+    min-width: 250px;
 }
 
 .foto img {
@@ -843,7 +854,7 @@ footer p {
     }
     
     .entrada-left h1 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     
     .tech-grid {
@@ -864,15 +875,26 @@ footer p {
     
     .entrada {
         padding: 30px 20px;
-        gap: 30px;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .entrada-left {
+        flex: 0 0 58%;
+        max-width: 58%;
     }
     
     .entrada-left h1 {
-        font-size: 2.8rem;
+        font-size: 1.8rem;
     }
     
     .entrada-left p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+    
+    .foto {
+        flex: 0 0 38%;
+        min-width: 200px;
     }
     
     .foto img {
@@ -1002,6 +1024,10 @@ footer p {
     .entrada-left h1 {
         font-size: 2.2rem;
         line-height: 1.2;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
     }
     
     .entrada-left p {
@@ -1186,6 +1212,11 @@ footer p {
     .entrada-left h1 {
         font-size: 1.8rem;
         line-height: 1.1;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        word-spacing: 0.3em;
     }
     
     .entrada-left p {
@@ -1315,6 +1346,11 @@ footer p {
     /* Dispositivos muy pequeños */
     .entrada-left h1 {
         font-size: 1.5rem;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.2;
+        word-spacing: 0.2em;
     }
     
     .foto img {
@@ -1386,15 +1422,26 @@ footer p {
 @media (min-width: 769px) and (max-width: 1024px) {
     .entrada {
         padding: 40px 30px;
+        gap: 25px;
+    }
+    
+    .entrada-left {
+        flex: 0 0 60%;
+        max-width: 60%;
     }
     
     .entrada-left h1 {
-        font-size: 3.2rem;
+        font-size: 2rem;
+    }
+    
+    .foto {
+        flex: 0 0 35%;
+        min-width: 220px;
     }
     
     .foto img {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
     }
     
     .tech-grid {
